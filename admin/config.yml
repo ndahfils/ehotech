@@ -5,6 +5,8 @@ backend:
 media_folder: "public/uploads"
 public_folder: "/uploads"
 
+site_url: https://taupe-lokum-73eae3.netlify.app
+
 collections:
   - name: "pages"
     label: "Pages"
