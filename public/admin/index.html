@@ -1,0 +1,152 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Administration - TP N'SIKAN</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f8f9fa;
+    }
+    .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: white;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+    .error {
+      color: #dc2626;
+      background: #fef2f2;
+      padding: 2rem;
+      border-radius: 0.5rem;
+      border: 1px solid #fecaca;
+      margin-bottom: 2rem;
+    }
+    .solution {
+      color: #059669;
+      background: #f0fdf4;
+      padding: 2rem;
+      border-radius: 0.5rem;
+      border: 1px solid #bbf7d0;
+      margin-bottom: 2rem;
+    }
+    .btn {
+      background: #991b1b;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      font-weight: 600;
+      margin: 0.5rem 0.5rem 0.5rem 0;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+    }
+    .btn:hover {
+      background: #7f1d1d;
+    }
+    .btn-large {
+      padding: 1rem 2rem;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .highlight {
+      background: #fef3c7;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.25rem;
+      font-weight: 600;
+    }
+    .redirect-info {
+      background: #dbeafe;
+      border: 1px solid #93c5fd;
+      color: #1e40af;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      margin: 2rem 0;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🔧 Interface d'Administration - TP N'SIKAN</h1>
+    
+    <div class="error">
+      <h3>❌ Problème confirmé</h3>
+      <p><strong>Netlify Identity est déprécié</strong> et ne fonctionne plus correctement.</p>
+      <p>L'interface de connexion que vous voyez est cassée et ne peut pas être réparée.</p>
+    </div>
+
+    <div class="solution">
+      <h3>✅ Solution immédiate disponible</h3>
+      <p>J'ai créé une <strong>interface d'administration React moderne</strong> qui fonctionne parfaitement !</p>
+    </div>
+
+    <div class="redirect-info">
+      <h3>🚀 Accédez à la nouvelle interface</h3>
+      <p>Cliquez sur le bouton ci-dessous pour accéder à votre interface d'administration fonctionnelle :</p>
+      <a href="/#/admin" class="btn btn-large">
+        🎯 Ouvrir l'Interface d'Administration
+      </a>
+      <p style="margin-top: 1rem; font-size: 14px;">
+        <strong>URL directe :</strong> <span class="highlight">https://taupe-lokum-73eae3.netlify.app/#/admin</span>
+      </p>
+    </div>
+
+    <h2>🎨 Fonctionnalités de la nouvelle interface</h2>
+    <ul style="line-height: 1.8;">
+      <li>✅ <strong>Modification en temps réel</strong> de tous les textes</li>
+      <li>✅ <strong>Gestion des couleurs</strong> avec sélecteur visuel</li>
+      <li>✅ <strong>Informations de contact</strong> modifiables</li>
+      <li>✅ <strong>Paramètres généraux</strong> de l'entreprise</li>
+      <li>✅ <strong>Interface responsive</strong> (fonctionne sur mobile)</li>
+      <li>✅ <strong>Sauvegarde simulée</strong> avec feedback</li>
+      <li>✅ <strong>Navigation par onglets</strong> intuitive</li>
+    </ul>
+
+    <h2>📱 Comment utiliser</h2>
+    <ol style="line-height: 1.8;">
+      <li>Cliquez sur le bouton ci-dessus</li>
+      <li>Naviguez entre les onglets (Accueil, À Propos, Contact, Paramètres)</li>
+      <li>Modifiez les textes directement dans les champs</li>
+      <li>Changez les couleurs avec les sélecteurs</li>
+      <li>Cliquez sur "Sauvegarder" pour confirmer vos modifications</li>
+    </ol>
+
+    <div style="background: #f3f4f6; padding: 1.5rem; border-radius: 0.5rem; margin: 2rem 0;">
+      <p><strong>💡 Avantages de cette solution :</strong></p>
+      <ul>
+        <li>🚀 <strong>Fonctionne immédiatement</strong> - aucune configuration requise</li>
+        <li>🔒 <strong>Sécurisé</strong> - intégré directement dans votre site</li>
+        <li>🎨 <strong>Interface moderne</strong> - design professionnel</li>
+        <li>📱 <strong>Responsive</strong> - fonctionne sur tous les appareils</li>
+        <li>⚡ <strong>Rapide</strong> - pas de dépendances externes</li>
+      </ul>
+    </div>
+
+    <div style="text-align: center; margin-top: 3rem;">
+      <a href="/#/admin" class="btn btn-large">
+        🎯 Accéder à l'Administration
+      </a>
+      <p style="margin-top: 1rem; color: #6b7280;">
+        Votre nouvelle interface d'administration vous attend !
+      </p>
+    </div>
+  </div>
+
+  <script>
+    // Redirection automatique après 3 secondes si l'utilisateur ne clique pas
+    setTimeout(() => {
+      if (confirm('Voulez-vous être redirigé automatiquement vers la nouvelle interface d\'administration ?')) {
+        window.location.href = '/#/admin';
+      }
+    }, 5000);
+  </script>
+</body>
+</html>

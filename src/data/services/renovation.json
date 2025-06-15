@@ -1,0 +1,16 @@
+{
+  "title": "Travaux de Rénovation",
+  "description": "Rénovation complète ou partielle de vos espaces existants pour leur donner une nouvelle vie moderne et fonctionnelle.",
+  "details": "Que ce soit pour moderniser votre habitat, améliorer l'efficacité énergétique ou simplement rafraîchir vos espaces, nos équipes interviennent avec professionnalisme en minimisant les nuisances.",
+  "image": "https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&w=800",
+  "icon": "Hammer",
+  "features": [
+    "Rénovation intérieure complète",
+    "Réfection de façades",
+    "Rénovation de toitures",
+    "Extensions et agrandissements",
+    "Mise aux normes électriques",
+    "Isolation thermique et phonique"
+  ],
+  "order": 2
+}

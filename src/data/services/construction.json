@@ -1,0 +1,16 @@
+{
+  "title": "Construction de Bâtiments",
+  "description": "Construction résidentielle, commerciale et industrielle avec des matériaux de qualité supérieure et un savoir-faire reconnu.",
+  "details": "Notre équipe d'experts accompagne vos projets de construction de A à Z, depuis les études préliminaires jusqu'à la livraison clés en main. Nous utilisons des matériaux de première qualité et respectons scrupuleusement les normes de construction en vigueur.",
+  "image": "https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=800",
+  "icon": "Building2",
+  "features": [
+    "Maisons individuelles sur mesure",
+    "Immeubles résidentiels et commerciaux",
+    "Bureaux et espaces professionnels",
+    "Entrepôts et bâtiments industriels",
+    "Suivi de chantier personnalisé",
+    "Garantie décennale"
+  ],
+  "order": 1
+}
