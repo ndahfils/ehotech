@@ -1,102 +1,117 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Facebook, Linkedin, Twitter, ArrowUp } from 'lucide-react';
+import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react';
 
 const Footer = () => {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
-          {/* Company Info */}
-          <div className="space-y-6">
-            <div>
+    <footer className="bg-neutral-900 text-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Logo et description */}
+          <div className="lg:col-span-1">
+            <div className="flex items-center space-x-3 mb-4">
               <img 
                 src="/logo tp n'sikan.png" 
                 alt="TP N'SIKAN PROJET ESPOIR" 
-                className="h-16 w-auto mb-4 brightness-0 invert"
+                className="h-12 w-auto"
               />
-              <p className="text-gray-300 leading-relaxed">
-                Votre partenaire de confiance pour tous vos projets de construction 
-                et de travaux publics en Côte d'Ivoire depuis plus de 15 ans.
-              </p>
+              <div>
+                <div className="text-lg font-heading font-bold text-primary-400">
+                  TP N'SIKAN
+                </div>
+                <div className="text-sm text-secondary-400 font-medium">
+                  PROJET ESPOIR
+                </div>
+              </div>
             </div>
-            <div className="flex space-x-4">
-              <a href="#" className="bg-red-800 p-2 rounded-lg hover:bg-red-700 transition-colors">
-                <Facebook size={20} />
+            <p className="text-neutral-300 text-sm leading-relaxed">
+              Votre partenaire de confiance pour tous vos projets de construction, 
+              rénovation et aménagement en Côte d'Ivoire.
+            </p>
+            <div className="flex space-x-4 mt-6">
+              <a 
+                href="https://www.facebook.com/tpnsikanprojetespoir" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-neutral-400 hover:text-primary-400 transition-colors"
+              >
+                <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="bg-red-800 p-2 rounded-lg hover:bg-red-700 transition-colors">
-                <Linkedin size={20} />
+              <a 
+                href="#" 
+                className="text-neutral-400 hover:text-primary-400 transition-colors"
+              >
+                <Instagram className="h-5 w-5" />
               </a>
-              <a href="#" className="bg-red-800 p-2 rounded-lg hover:bg-red-700 transition-colors">
-                <Twitter size={20} />
+              <a 
+                href="#" 
+                className="text-neutral-400 hover:text-primary-400 transition-colors"
+              >
+                <Linkedin className="h-5 w-5" />
               </a>
             </div>
+          </div>
+
+          {/* Navigation rapide */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4 text-primary-400">Navigation</h3>
+            <ul className="space-y-2">
+              <li><Link to="/" className="text-neutral-300 hover:text-white transition-colors">Accueil</Link></li>
+              <li><Link to="/a-propos" className="text-neutral-300 hover:text-white transition-colors">À Propos</Link></li>
+              <li><Link to="/services" className="text-neutral-300 hover:text-white transition-colors">Services</Link></li>
+              <li><Link to="/projets" className="text-neutral-300 hover:text-white transition-colors">Projets</Link></li>
+              <li><Link to="/contact" className="text-neutral-300 hover:text-white transition-colors">Contact</Link></li>
+            </ul>
           </div>
 
           {/* Services */}
           <div>
-            <h3 className="text-xl font-bold mb-6">Nos Services</h3>
-            <ul className="space-y-3">
-              <li><Link to="/services" className="text-gray-300 hover:text-white transition-colors">Construction de Bâtiments</Link></li>
-              <li><Link to="/services" className="text-gray-300 hover:text-white transition-colors">Travaux de Rénovation</Link></li>
-              <li><Link to="/services" className="text-gray-300 hover:text-white transition-colors">Travaux Publics</Link></li>
-              <li><Link to="/services" className="text-gray-300 hover:text-white transition-colors">Aménagement Intérieur</Link></li>
-              <li><Link to="/services" className="text-gray-300 hover:text-white transition-colors">Maintenance</Link></li>
-              <li><Link to="/services" className="text-gray-300 hover:text-white transition-colors">Études & Conseils</Link></li>
+            <h3 className="text-lg font-semibold mb-4 text-primary-400">Nos Services</h3>
+            <ul className="space-y-2">
+              <li><span className="text-neutral-300">Construction neuve</span></li>
+              <li><span className="text-neutral-300">Rénovation</span></li>
+              <li><span className="text-neutral-300">Aménagement</span></li>
+              <li><span className="text-neutral-300">Maçonnerie</span></li>
+              <li><span className="text-neutral-300">Électricité</span></li>
             </ul>
           </div>
 
-          {/* Quick Links */}
+          {/* Contact */}
           <div>
-            <h3 className="text-xl font-bold mb-6">Liens Rapides</h3>
-            <ul className="space-y-3">
-              <li><Link to="/" className="text-gray-300 hover:text-white transition-colors">Accueil</Link></li>
-              <li><Link to="/services" className="text-gray-300 hover:text-white transition-colors">Services</Link></li>
-              <li><Link to="/projets" className="text-gray-300 hover:text-white transition-colors">Projets</Link></li>
-              <li><Link to="/apropos" className="text-gray-300 hover:text-white transition-colors">À Propos</Link></li>
-              <li><Link to="/contact" className="text-gray-300 hover:text-white transition-colors">Contact</Link></li>
-              <li><Link to="/contact" className="text-gray-300 hover:text-white transition-colors">Devis Gratuit</Link></li>
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div>
-            <h3 className="text-xl font-bold mb-6">Contact</h3>
-            <div className="space-y-4">
+            <h3 className="text-lg font-semibold mb-4 text-primary-400">Contact</h3>
+            <div className="space-y-3">
               <div className="flex items-start space-x-3">
-                <MapPin className="text-red-400 mt-1" size={18} />
-                <div className="text-gray-300">
-                  <p>Abidjan, Cocody Riviera Golf</p>
-                  <p>Rue des Jardins, Lot 247</p>
-                </div>
+                <MapPin className="h-5 w-5 text-primary-400 mt-0.5 flex-shrink-0" />
+                <span className="text-neutral-300 text-sm">
+                  Abidjan, Côte d'Ivoire
+                </span>
               </div>
               <div className="flex items-center space-x-3">
-                <Phone className="text-red-400" size={18} />
-                <span className="text-gray-300">+225 07 07 07 07 07</span>
+                <Phone className="h-5 w-5 text-primary-400 flex-shrink-0" />
+                <span className="text-neutral-300 text-sm">+225 XX XX XX XX XX</span>
               </div>
               <div className="flex items-center space-x-3">
-                <Mail className="text-red-400" size={18} />
-                <span className="text-gray-300">contact@tpnsikan.com</span>
+                <Mail className="h-5 w-5 text-primary-400 flex-shrink-0" />
+                <span className="text-neutral-300 text-sm">contact@tpnsikan.com</span>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-center md:text-left">
-            © 2024 TP N'SIKAN PROJET ESPOIR. Tous droits réservés.
-          </p>
-          <button
-            onClick={scrollToTop}
-            className="mt-4 md:mt-0 bg-red-800 hover:bg-red-700 p-2 rounded-lg transition-colors"
-          >
-            <ArrowUp size={20} />
-          </button>
+        <div className="border-t border-neutral-800 mt-12 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <p className="text-neutral-400 text-sm">
+              © 2024 TP N'SIKAN PROJET ESPOIR. Tous droits réservés.
+            </p>
+            <div className="flex space-x-6 mt-4 md:mt-0">
+              <Link to="#" className="text-neutral-400 hover:text-white text-sm transition-colors">
+                Mentions légales
+              </Link>
+              <Link to="#" className="text-neutral-400 hover:text-white text-sm transition-colors">
+                Politique de confidentialité
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

@@ -1,0 +1,147 @@
+backend:
+  name: git-gateway
+  branch: main # Branche à utiliser (main ou master)
+
+# Configuration des médias
+media_folder: "public/images/uploads" # Dossier où stocker les images
+public_folder: "/images/uploads" # Chemin public des images
+
+# Collections de contenu
+collections:
+  # Configuration générale du site
+  - name: "settings"
+    label: "⚙️ Configuration Générale"
+    files:
+      - label: "Informations de Contact"
+        name: "contact"
+        file: "src/data/contact.json"
+        fields:
+          - {label: "Nom de l'entreprise", name: "company_name", widget: "string"}
+          - {label: "Téléphone Principal", name: "phone_main", widget: "string"}
+          - {label: "Téléphone Secondaire", name: "phone_secondary", widget: "string"}
+          - {label: "Email Principal", name: "email_main", widget: "string"}
+          - {label: "Email Devis", name: "email_quote", widget: "string"}
+          - {label: "Adresse", name: "address", widget: "text"}
+          - {label: "Ville", name: "city", widget: "string"}
+          - {label: "Pays", name: "country", widget: "string"}
+          - {label: "Facebook URL", name: "facebook_url", widget: "string"}
+          - {label: "Instagram URL", name: "instagram_url", widget: "string"}
+          - {label: "LinkedIn URL", name: "linkedin_url", widget: "string"}
+
+  # Slider d'accueil
+  - name: "hero_slider"
+    label: "🏠 Slider d'Accueil"
+    folder: "src/data/slides"
+    create: true
+    slug: "slide-{{slug}}"
+    fields:
+      - {label: "Titre Principal", name: "title", widget: "string"}
+      - {label: "Sous-titre", name: "subtitle", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Image", name: "image", widget: "image"}
+      - {label: "Ordre d'affichage", name: "order", widget: "number", default: 1}
+      - {label: "Actif", name: "active", widget: "boolean", default: true}
+
+  # Services
+  - name: "services"
+    label: "🔧 Services"
+    folder: "src/data/services"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Nom du Service", name: "title", widget: "string"}
+      - {label: "Description Courte", name: "description", widget: "text"}
+      - {label: "Description Détaillée", name: "detailed_description", widget: "markdown"}
+      - {label: "Image Principale", name: "image", widget: "image"}
+      - {label: "Icône (nom Lucide)", name: "icon", widget: "string", hint: "Ex: Building, Wrench, Palette"}
+      - {label: "Caractéristiques", name: "features", widget: "list", field: {label: "Caractéristique", name: "feature", widget: "string"}}
+      - {label: "Processus", name: "process", widget: "list", field: {label: "Étape", name: "step", widget: "string"}}
+      - {label: "Prix Indicatif", name: "price_range", widget: "string", required: false}
+      - {label: "Durée Moyenne", name: "duration", widget: "string", required: false}
+
+  # Projets/Réalisations
+  - name: "projects"
+    label: "🏗️ Projets & Réalisations"
+    folder: "src/data/projects"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Nom du Projet", name: "title", widget: "string"}
+      - {label: "Catégorie", name: "category", widget: "select", options: ["construction", "renovation", "amenagement"]}
+      - {label: "Image Principale", name: "image", widget: "image"}
+      - {label: "Galerie d'Images", name: "gallery", widget: "list", field: {label: "Image", name: "image", widget: "image"}}
+      - {label: "Localisation", name: "location", widget: "string"}
+      - {label: "Date de Réalisation", name: "date", widget: "string"}
+      - {label: "Client", name: "client", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Description Détaillée", name: "detailed_description", widget: "markdown"}
+      - {label: "Caractéristiques", name: "features", widget: "list", field: {label: "Caractéristique", name: "feature", widget: "string"}}
+      - {label: "Durée des Travaux", name: "duration", widget: "string"}
+      - {label: "Budget", name: "budget", widget: "string"}
+      - {label: "Témoignage Client", name: "testimonial", widget: "object", fields: [
+          {label: "Nom du Client", name: "client_name", widget: "string"},
+          {label: "Commentaire", name: "comment", widget: "text"},
+          {label: "Note (1-5)", name: "rating", widget: "number", min: 1, max: 5}
+        ]}
+      - {label: "Projet Vedette", name: "featured", widget: "boolean", default: false}
+
+  # Équipe
+  - name: "team"
+    label: "👥 Équipe"
+    folder: "src/data/team"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Nom Complet", name: "name", widget: "string"}
+      - {label: "Poste", name: "position", widget: "string"}
+      - {label: "Photo", name: "photo", widget: "image"}
+      - {label: "Biographie", name: "bio", widget: "text"}
+      - {label: "Expérience (années)", name: "experience", widget: "number"}
+      - {label: "Spécialités", name: "specialties", widget: "list", field: {label: "Spécialité", name: "specialty", widget: "string"}}
+      - {label: "Email", name: "email", widget: "string", required: false}
+      - {label: "Téléphone", name: "phone", widget: "string", required: false}
+
+  # Témoignages
+  - name: "testimonials"
+    label: "💬 Témoignages"
+    folder: "src/data/testimonials"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Nom du Client", name: "name", widget: "string"}
+      - {label: "Entreprise/Titre", name: "role", widget: "string"}
+      - {label: "Photo", name: "photo", widget: "image", required: false}
+      - {label: "Témoignage", name: "content", widget: "text"}
+      - {label: "Note (1-5)", name: "rating", widget: "number", min: 1, max: 5}
+      - {label: "Projet Associé", name: "project", widget: "string", required: false}
+      - {label: "Date", name: "date", widget: "datetime"}
+
+  # Pages de contenu
+  - name: "pages"
+    label: "📄 Pages"
+    files:
+      - label: "Page À Propos"
+        name: "about"
+        file: "src/data/pages/about.json"
+        fields:
+          - {label: "Titre Principal", name: "title", widget: "string"}
+          - {label: "Sous-titre", name: "subtitle", widget: "string"}
+          - {label: "Histoire de l'Entreprise", name: "history", widget: "markdown"}
+          - {label: "Mission", name: "mission", widget: "text"}
+          - {label: "Vision", name: "vision", widget: "text"}
+          - {label: "Valeurs", name: "values", widget: "list", fields: [
+              {label: "Titre", name: "title", widget: "string"},
+              {label: "Description", name: "description", widget: "text"},
+              {label: "Icône", name: "icon", widget: "string"}
+            ]}
+          - {label: "Statistiques", name: "stats", widget: "list", fields: [
+              {label: "Nombre", name: "number", widget: "string"},
+              {label: "Label", name: "label", widget: "string"}
+            ]}
+
+# Configuration de l'éditeur
+editor:
+  preview: false
+
+# Configuration de l'authentification
+publish_mode: editorial_workflow

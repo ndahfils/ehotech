@@ -1,270 +1,332 @@
 import React, { useState } from 'react';
-import { ExternalLink, Calendar, MapPin, Filter, Search } from 'lucide-react';
+import { Calendar, MapPin, User, ArrowRight, Filter } from 'lucide-react';
 
 const Projects = () => {
-  const [activeFilter, setActiveFilter] = useState('Tous');
-  const [searchTerm, setSearchTerm] = useState('');
+  const [activeFilter, setActiveFilter] = useState('tous');
+
+  const categories = [
+    { id: 'tous', name: 'Tous les projets' },
+    { id: 'construction', name: 'Construction neuve' },
+    { id: 'renovation', name: 'Rénovation' },
+    { id: 'amenagement', name: 'Aménagement' }
+  ];
 
   const projects = [
     {
-      title: "Complexe Résidentiel Les Palmiers",
-      category: "Résidentiel",
-      location: "Abidjan, Cocody",
-      year: "2023",
-      image: "https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=800",
-      description: "Construction d'un complexe résidentiel moderne de 50 logements avec espaces verts et équipements communautaires.",
-      details: "Ce projet ambitieux comprend 50 logements de standing répartis sur 3 bâtiments, avec piscine, aire de jeux pour enfants, parking souterrain et espaces verts paysagers. Livré en 18 mois.",
-      surface: "5,000 m²",
-      budget: "2.5 milliards FCFA"
+      id: 1,
+      title: 'Villa Moderne Cocody',
+      category: 'construction',
+      image: 'https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+      location: 'Cocody, Abidjan',
+      date: '2024',
+      client: 'Famille Kouassi',
+      description: 'Construction d\'une villa moderne de 250m² avec piscine et jardin paysager.',
+      features: ['4 chambres', 'Piscine', 'Garage double', 'Jardin paysager'],
+      duration: '8 mois',
+      budget: '85M FCFA'
     },
     {
-      title: "Centre Commercial Plateau",
-      category: "Commercial",
-      location: "Abidjan, Plateau",
-      year: "2023",
-      image: "https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=800",
-      description: "Réalisation d'un centre commercial moderne avec parking souterrain et espaces de restauration.",
-      details: "Centre commercial de 3 niveaux avec 80 boutiques, food court, cinéma et parking de 200 places. Architecture moderne avec façade en verre et acier.",
-      surface: "8,000 m²",
-      budget: "4.2 milliards FCFA"
+      id: 2,
+      title: 'Rénovation Maison Coloniale',
+      category: 'renovation',
+      image: 'https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+      location: 'Plateau, Abidjan',
+      date: '2023',
+      client: 'M. Diabaté',
+      description: 'Rénovation complète d\'une maison coloniale avec conservation du cachet historique.',
+      features: ['Rénovation énergétique', 'Mise aux normes', 'Conservation patrimoine', 'Modernisation'],
+      duration: '6 mois',
+      budget: '45M FCFA'
     },
     {
-      title: "Route Nationale RN7",
-      category: "Travaux Publics",
-      location: "Yamoussoukro - Bouaké",
-      year: "2022",
-      image: "https://images.pexels.com/photos/1906794/pexels-photo-1906794.jpeg?auto=compress&cs=tinysrgb&w=800",
-      description: "Réhabilitation de 25 km de route nationale avec amélioration du drainage et de la signalisation.",
-      details: "Réfection complète de la chaussée, création de nouveaux ouvrages de drainage, installation de signalisation moderne et éclairage LED sur les traversées d'agglomération.",
-      surface: "25 km",
-      budget: "8.5 milliards FCFA"
+      id: 3,
+      title: 'Aménagement Bureau Moderne',
+      category: 'amenagement',
+      image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+      location: 'Zone 4, Abidjan',
+      date: '2024',
+      client: 'Entreprise TechCorp',
+      description: 'Aménagement d\'espaces de bureaux modernes pour 50 employés.',
+      features: ['Open space', 'Salles de réunion', 'Espace détente', 'Éclairage LED'],
+      duration: '3 mois',
+      budget: '25M FCFA'
     },
     {
-      title: "Hôpital Général de Bouaké",
-      category: "Santé",
-      location: "Bouaké",
-      year: "2022",
-      image: "https://images.pexels.com/photos/263402/pexels-photo-263402.jpeg?auto=compress&cs=tinysrgb&w=800",
-      description: "Extension et modernisation de l'hôpital avec nouveaux équipements médicaux et blocs opératoires.",
-      details: "Extension de 3,000 m² comprenant 2 nouveaux blocs opératoires, service de réanimation, laboratoire d'analyses et modernisation complète des installations existantes.",
-      surface: "3,000 m²",
-      budget: "3.8 milliards FCFA"
+      id: 4,
+      title: 'Résidence Familiale Yopougon',
+      category: 'construction',
+      image: 'https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+      location: 'Yopougon, Abidjan',
+      date: '2023',
+      client: 'Famille Traoré',
+      description: 'Construction d\'une résidence familiale avec architecture contemporaine.',
+      features: ['5 chambres', 'Terrasse', 'Cuisine américaine', 'Buanderie'],
+      duration: '10 mois',
+      budget: '65M FCFA'
     },
     {
-      title: "École Primaire Sainte-Marie",
-      category: "Éducation",
-      location: "Grand-Bassam",
-      year: "2021",
-      image: "https://images.pexels.com/photos/207692/pexels-photo-207692.jpeg?auto=compress&cs=tinysrgb&w=800",
-      description: "Construction d'une école primaire moderne avec 12 salles de classe, bibliothèque et terrain de sport.",
-      details: "École de 12 classes avec bibliothèque, salle informatique, cantine, terrain de sport multisports et aire de jeux. Capacité d'accueil de 400 élèves.",
-      surface: "2,500 m²",
-      budget: "1.2 milliards FCFA"
+      id: 5,
+      title: 'Rénovation Appartement Standing',
+      category: 'renovation',
+      image: 'https://images.pexels.com/photos/1571453/pexels-photo-1571453.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+      location: 'Marcory, Abidjan',
+      date: '2024',
+      client: 'Mme Bamba',
+      description: 'Rénovation complète d\'un appartement de standing avec design contemporain.',
+      features: ['Design moderne', 'Domotique', 'Matériaux haut de gamme', 'Optimisation espace'],
+      duration: '4 mois',
+      budget: '35M FCFA'
     },
     {
-      title: "Pont de la Comoé",
-      category: "Infrastructure",
-      location: "Abengourou",
-      year: "2021",
-      image: "https://images.pexels.com/photos/1906658/pexels-photo-1906658.jpeg?auto=compress&cs=tinysrgb&w=800",
-      description: "Construction d'un pont moderne de 150m facilitant la circulation entre les deux rives de la Comoé.",
-      details: "Pont à poutres en béton précontraint de 150m de long, 12m de large, avec voies piétonnes et éclairage LED. Résistance aux crues centennales.",
-      surface: "150 m",
-      budget: "2.8 milliards FCFA"
-    },
-    {
-      title: "Résidence Les Jardins",
-      category: "Résidentiel",
-      location: "Abidjan, Riviera",
-      year: "2021",
-      image: "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800",
-      description: "Résidence haut de gamme de 24 villas avec piscines privées et jardins paysagers.",
-      details: "24 villas de luxe de 200 à 350 m² chacune, avec piscines privées, jardins paysagers, système de sécurité intégré et club house communautaire.",
-      surface: "12,000 m²",
-      budget: "6.5 milliards FCFA"
-    },
-    {
-      title: "Usine Agroalimentaire SANIA",
-      category: "Industriel",
-      location: "San Pedro",
-      year: "2020",
-      image: "https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=800",
-      description: "Construction d'une usine de transformation agroalimentaire avec équipements industriels.",
-      details: "Usine de transformation de cacao et café avec lignes de production automatisées, laboratoire de contrôle qualité, entrepôts frigorifiques et bureaux administratifs.",
-      surface: "4,500 m²",
-      budget: "5.2 milliards FCFA"
+      id: 6,
+      title: 'Aménagement Restaurant',
+      category: 'amenagement',
+      image: 'https://images.pexels.com/photos/1579253/pexels-photo-1579253.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+      location: 'Treichville, Abidjan',
+      date: '2023',
+      client: 'Restaurant Le Palmier',
+      description: 'Aménagement complet d\'un restaurant avec cuisine professionnelle.',
+      features: ['Cuisine pro', 'Salle 80 couverts', 'Terrasse', 'Décoration thématique'],
+      duration: '5 mois',
+      budget: '40M FCFA'
     }
   ];
 
-  const categories = ['Tous', 'Résidentiel', 'Commercial', 'Travaux Publics', 'Santé', 'Éducation', 'Infrastructure', 'Industriel'];
-
-  const filteredProjects = projects.filter(project => {
-    const matchesCategory = activeFilter === 'Tous' || project.category === activeFilter;
-    const matchesSearch = project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         project.location.toLowerCase().includes(searchTerm.toLowerCase());
-    return matchesCategory && matchesSearch;
-  });
+  const filteredProjects = activeFilter === 'tous' 
+    ? projects 
+    : projects.filter(project => project.category === activeFilter);
 
   return (
     <div className="pt-20">
-      {/* Header */}
-      <section className="bg-gradient-to-r from-red-800 to-red-900 text-white py-20">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl lg:text-6xl font-bold mb-6">
-            Nos <span className="text-green-400">Réalisations</span>
+      {/* Hero Section */}
+      <section className="py-20 bg-gradient-to-r from-primary-600 to-primary-700">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-5xl font-heading font-bold text-white mb-6">
+            Nos Réalisations
           </h1>
-          <p className="text-xl lg:text-2xl max-w-4xl mx-auto">
-            Découvrez notre portfolio de projets réalisés qui témoignent de notre expertise 
-            et de notre engagement envers l'excellence dans tous les secteurs.
+          <p className="text-xl text-primary-100 max-w-3xl mx-auto">
+            Découvrez quelques-uns de nos projets les plus remarquables et 
+            laissez-vous inspirer pour votre futur projet.
           </p>
         </div>
       </section>
 
-      {/* Filters and Search */}
-      <section className="py-12 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row gap-6 items-center justify-between">
-            {/* Search */}
-            <div className="relative flex-1 max-w-md">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
-              <input
-                type="text"
-                placeholder="Rechercher un projet..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-800 focus:border-transparent"
-              />
+      {/* Filtres */}
+      <section className="py-12 bg-white border-b border-neutral-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <div className="flex items-center space-x-2 text-neutral-600">
+              <Filter className="h-5 w-5" />
+              <span className="font-medium">Filtrer par :</span>
             </div>
-
-            {/* Category Filters */}
-            <div className="flex items-center space-x-2">
-              <Filter className="text-gray-600" size={20} />
-              <div className="flex flex-wrap gap-2">
-                {categories.map((category) => (
-                  <button
-                    key={category}
-                    onClick={() => setActiveFilter(category)}
-                    className={`px-4 py-2 rounded-lg font-medium transition-all ${
-                      activeFilter === category
-                        ? 'bg-red-800 text-white'
-                        : 'bg-white text-gray-700 hover:bg-red-100'
-                    }`}
-                  >
-                    {category}
-                  </button>
-                ))}
-              </div>
-            </div>
+            {categories.map((category) => (
+              <button
+                key={category.id}
+                onClick={() => setActiveFilter(category.id)}
+                className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${
+                  activeFilter === category.id
+                    ? 'bg-primary-600 text-white shadow-lg'
+                    : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200'
+                }`}
+              >
+                {category.name}
+              </button>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Projects Grid */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {/* Grille des projets */}
+      <section className="py-20 bg-neutral-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProjects.map((project, index) => (
               <div 
-                key={index}
-                className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden"
+                key={project.id}
+                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-slide-up"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="relative overflow-hidden">
+                <div className="relative">
                   <img 
-                    src={project.image} 
+                    src={project.image}
                     alt={project.title}
-                    className="w-full h-48 object-cover transition-transform duration-300 hover:scale-110"
+                    className="w-full h-64 object-cover"
                   />
                   <div className="absolute top-4 left-4">
-                    <span className="bg-red-800 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      {project.category}
-                    </span>
-                  </div>
-                  <div className="absolute top-4 right-4">
-                    <span className="bg-black bg-opacity-50 text-white px-2 py-1 rounded text-sm">
-                      {project.year}
+                    <span className="bg-primary-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                      {categories.find(cat => cat.id === project.category)?.name}
                     </span>
                   </div>
                 </div>
-                
+
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-800 mb-3">{project.title}</h3>
-                  <p className="text-gray-600 mb-4 leading-relaxed">{project.description}</p>
-                  
+                  <h3 className="text-xl font-semibold text-neutral-900 mb-3">
+                    {project.title}
+                  </h3>
+                  <p className="text-neutral-600 mb-4 text-sm leading-relaxed">
+                    {project.description}
+                  </p>
+
                   <div className="space-y-2 mb-4">
-                    <div className="flex items-center text-gray-500 text-sm">
-                      <MapPin size={16} className="mr-2" />
-                      {project.location}
+                    <div className="flex items-center space-x-2 text-sm text-neutral-600">
+                      <MapPin className="h-4 w-4 text-primary-600" />
+                      <span>{project.location}</span>
                     </div>
-                    <div className="flex items-center text-gray-500 text-sm">
-                      <Calendar size={16} className="mr-2" />
-                      {project.year}
+                    <div className="flex items-center space-x-2 text-sm text-neutral-600">
+                      <Calendar className="h-4 w-4 text-primary-600" />
+                      <span>{project.date}</span>
+                    </div>
+                    <div className="flex items-center space-x-2 text-sm text-neutral-600">
+                      <User className="h-4 w-4 text-primary-600" />
+                      <span>{project.client}</span>
                     </div>
                   </div>
 
-                  <div className="border-t pt-4">
-                    <div className="flex justify-between items-center text-sm text-gray-600 mb-3">
-                      <span><strong>Surface:</strong> {project.surface}</span>
-                      <span><strong>Budget:</strong> {project.budget}</span>
+                  <div className="border-t border-neutral-200 pt-4">
+                    <div className="flex justify-between items-center mb-3">
+                      <span className="text-sm font-medium text-neutral-700">Durée:</span>
+                      <span className="text-sm text-neutral-600">{project.duration}</span>
                     </div>
-                    
-                    <button className="w-full flex items-center justify-center text-red-800 hover:text-red-900 font-semibold transition-colors bg-red-50 hover:bg-red-100 py-2 rounded-lg">
-                      <span>Voir les détails</span>
-                      <ExternalLink size={16} className="ml-2" />
-                    </button>
+                    <div className="flex justify-between items-center mb-4">
+                      <span className="text-sm font-medium text-neutral-700">Budget:</span>
+                      <span className="text-sm font-semibold text-primary-600">{project.budget}</span>
+                    </div>
                   </div>
+
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.features.slice(0, 3).map((feature, idx) => (
+                      <span 
+                        key={idx}
+                        className="bg-neutral-100 text-neutral-700 px-2 py-1 rounded text-xs"
+                      >
+                        {feature}
+                      </span>
+                    ))}
+                    {project.features.length > 3 && (
+                      <span className="text-xs text-neutral-500">
+                        +{project.features.length - 3} autres
+                      </span>
+                    )}
+                  </div>
+
+                  <button className="w-full bg-primary-600 text-white py-2 rounded-lg font-medium hover:bg-primary-700 transition-colors duration-300 flex items-center justify-center space-x-2">
+                    <span>Voir les détails</span>
+                    <ArrowRight className="h-4 w-4" />
+                  </button>
                 </div>
               </div>
             ))}
           </div>
-
-          {filteredProjects.length === 0 && (
-            <div className="text-center py-12">
-              <p className="text-xl text-gray-600">Aucun projet trouvé pour les critères sélectionnés.</p>
-            </div>
-          )}
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-20 bg-red-800 text-white">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-4xl font-bold mb-2">200+</div>
-              <div className="text-red-200">Projets Réalisés</div>
+      {/* Statistiques des projets */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-heading font-bold text-neutral-900 mb-4">
+              Nos Réalisations en Chiffres
+            </h2>
+            <p className="text-xl text-neutral-600">
+              Des projets variés qui témoignent de notre expertise
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="text-4xl font-bold text-primary-600 mb-2">150+</div>
+              <div className="text-neutral-600">Projets réalisés</div>
             </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">15+</div>
-              <div className="text-red-200">Années d'Expérience</div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-primary-600 mb-2">85%</div>
+              <div className="text-neutral-600">Construction neuve</div>
             </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">50+</div>
-              <div className="text-red-200">Équipe d'Experts</div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-primary-600 mb-2">12</div>
+              <div className="text-neutral-600">Mois délai moyen</div>
             </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">100%</div>
-              <div className="text-red-200">Clients Satisfaits</div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-primary-600 mb-2">98%</div>
+              <div className="text-neutral-600">Clients satisfaits</div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold text-gray-800 mb-6">Votre projet sera le prochain ?</h2>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            Rejoignez nos clients satisfaits et confiez-nous la réalisation de votre projet. 
-            Notre expertise est à votre service pour concrétiser vos ambitions.
+      {/* Témoignages clients */}
+      <section className="py-20 bg-neutral-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-heading font-bold text-neutral-900 mb-4">
+              Ce que disent nos clients
+            </h2>
+            <p className="text-xl text-neutral-600">
+              Leurs témoignages sont notre plus belle récompense
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-white rounded-xl p-8 shadow-lg">
+              <div className="flex mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <span key={i} className="text-yellow-400 text-xl">★</span>
+                ))}
+              </div>
+              <p className="text-neutral-700 mb-6 italic text-lg">
+                "TP N'SIKAN a réalisé la maison de nos rêves. L'équipe est professionnelle, 
+                à l'écoute et respecte les délais. Je recommande vivement !"
+              </p>
+              <div className="flex items-center space-x-4">
+                <img 
+                  src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop"
+                  alt="Client"
+                  className="w-12 h-12 rounded-full object-cover"
+                />
+                <div>
+                  <div className="font-semibold text-neutral-900">Marie Kouassi</div>
+                  <div className="text-sm text-neutral-600">Villa Moderne Cocody</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl p-8 shadow-lg">
+              <div className="flex mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <span key={i} className="text-yellow-400 text-xl">★</span>
+                ))}
+              </div>
+              <p className="text-neutral-700 mb-6 italic text-lg">
+                "Excellent travail de rénovation ! Ils ont su préserver le charme 
+                de ma maison coloniale tout en la modernisant. Parfait !"
+              </p>
+              <div className="flex items-center space-x-4">
+                <img 
+                  src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop"
+                  alt="Client"
+                  className="w-12 h-12 rounded-full object-cover"
+                />
+                <div>
+                  <div className="font-semibold text-neutral-900">Koffi Diabaté</div>
+                  <div className="text-sm text-neutral-600">Rénovation Maison Coloniale</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-20 bg-primary-600">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl font-heading font-bold text-white mb-6">
+            Votre Projet Sera le Prochain
+          </h2>
+          <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
+            Rejoignez nos clients satisfaits et concrétisez votre projet avec notre équipe d'experts.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-red-800 hover:bg-red-900 text-white px-8 py-4 rounded-lg font-semibold transition-all transform hover:scale-105">
-              Demander un Devis
-            </button>
-            <button className="border-2 border-red-800 text-red-800 hover:bg-red-800 hover:text-white px-8 py-4 rounded-lg font-semibold transition-all">
-              Voir Nos Services
-            </button>
-          </div>
+          <button className="bg-white text-primary-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-neutral-100 transition-colors duration-300">
+            Démarrer mon projet
+          </button>
         </div>
       </section>
     </div>

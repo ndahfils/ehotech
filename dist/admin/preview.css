@@ -1,0 +1,37 @@
+/* Styles pour la prévisualisation dans l'admin */
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: #374151;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.preview-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Couleurs de TP N'SIKAN */
+.text-primary {
+  color: #4a934a;
+}
+
+.text-secondary {
+  color: #dc2626;
+}
+
+.bg-primary {
+  background-color: #4a934a;
+  color: white;
+}
+
+.bg-secondary {
+  background-color: #dc2626;
+  color: white;
+}

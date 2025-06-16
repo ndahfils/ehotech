@@ -1,214 +1,193 @@
 import React from 'react';
-import { Target, Eye, Award, Users, CheckCircle, Building, Calendar, MapPin } from 'lucide-react';
+import { Users, Award, Target, Heart, CheckCircle, Calendar } from 'lucide-react';
 
 const About = () => {
   const values = [
     {
       icon: Target,
-      title: "Excellence",
-      description: "Nous visons l'excellence dans chaque projet, en utilisant les meilleures pratiques et technologies."
+      title: 'Excellence',
+      description: 'Nous visons l\'excellence dans chaque projet, en utilisant les meilleures pratiques et matériaux.'
     },
     {
-      icon: CheckCircle,
-      title: "Qualité",
-      description: "La qualité est au cœur de nos préoccupations, de la conception à la livraison finale."
+      icon: Heart,
+      title: 'Passion',
+      description: 'Notre passion pour la construction nous pousse à créer des espaces exceptionnels.'
     },
     {
       icon: Users,
-      title: "Partenariat",
-      description: "Nous construisons des relations durables basées sur la confiance et la transparence."
+      title: 'Collaboration',
+      description: 'Nous travaillons en étroite collaboration avec nos clients pour réaliser leur vision.'
     },
     {
       icon: Award,
-      title: "Innovation",
-      description: "Nous adoptons les dernières innovations pour offrir des solutions modernes et durables."
+      title: 'Qualité',
+      description: 'La qualité est au cœur de tout ce que nous faisons, de la conception à la livraison.'
     }
-  ];
-
-  const stats = [
-    { number: "15+", label: "Années d'expérience" },
-    { number: "200+", label: "Projets réalisés" },
-    { number: "50+", label: "Équipe d'experts" },
-    { number: "100%", label: "Clients satisfaits" }
   ];
 
   const timeline = [
     {
-      year: "2009",
-      title: "Création de l'entreprise",
-      description: "Fondation de TP N'SIKAN PROJET ESPOIR par Koffi Diabaté avec une vision claire : devenir un acteur majeur de la construction en Côte d'Ivoire."
+      year: '2009',
+      title: 'Création de l\'entreprise',
+      description: 'Fondation de TP N\'SIKAN PROJET ESPOIR avec une vision claire : offrir des services de construction de qualité.'
     },
     {
-      year: "2012",
-      title: "Premier grand projet",
-      description: "Réalisation de notre premier complexe résidentiel de 25 logements à Cocody, marquant notre entrée dans les grands projets."
+      year: '2012',
+      title: 'Expansion des services',
+      description: 'Élargissement de notre gamme de services pour inclure la rénovation et l\'aménagement intérieur.'
     },
     {
-      year: "2015",
-      title: "Expansion des services",
-      description: "Diversification vers les travaux publics avec la réhabilitation de 15 km de routes rurales dans la région du Bélier."
+      year: '2016',
+      title: '100 projets réalisés',
+      description: 'Franchissement du cap des 100 projets réalisés avec succès, consolidant notre réputation.'
     },
     {
-      year: "2018",
-      title: "Certification qualité",
-      description: "Obtention de la certification ISO 9001 et agrément pour les marchés publics de grande envergure."
+      year: '2020',
+      title: 'Innovation technologique',
+      description: 'Intégration de nouvelles technologies et méthodes de construction durables.'
     },
     {
-      year: "2021",
-      title: "Innovation technologique",
-      description: "Adoption des dernières technologies BIM et équipements de pointe pour optimiser nos processus de construction."
-    },
-    {
-      year: "2024",
-      title: "Leadership régional",
-      description: "Reconnaissance comme l'une des entreprises de construction les plus fiables de Côte d'Ivoire avec plus de 200 projets réalisés."
+      year: '2024',
+      title: 'Leader régional',
+      description: 'Reconnaissance comme l\'un des leaders de la construction en Côte d\'Ivoire.'
     }
   ];
 
   return (
     <div className="pt-20">
-      {/* Header */}
-      <section className="bg-gradient-to-r from-red-800 to-red-900 text-white py-20">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl lg:text-6xl font-bold mb-6">
-            À Propos de <span className="text-green-400">TP N'SIKAN</span>
+      {/* Hero Section */}
+      <section className="py-20 bg-gradient-to-r from-primary-600 to-primary-700">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-5xl font-heading font-bold text-white mb-6">
+            À Propos de TP N'SIKAN
           </h1>
-          <p className="text-xl lg:text-2xl max-w-4xl mx-auto">
-            Depuis plus de 15 ans, TP N'SIKAN PROJET ESPOIR s'impose comme un acteur majeur 
-            du secteur de la construction et des travaux publics en Côte d'Ivoire.
+          <p className="text-xl text-primary-100 max-w-3xl mx-auto">
+            Découvrez l'histoire, les valeurs et l'expertise qui font de nous 
+            votre partenaire de confiance pour tous vos projets de construction.
           </p>
         </div>
       </section>
 
-      {/* Introduction */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+      {/* Notre Histoire */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-6">
-                Notre <span className="text-red-800">Histoire</span>
+              <h2 className="text-4xl font-heading font-bold text-neutral-900 mb-6">
+                Notre Histoire
               </h2>
-              <p className="text-xl text-gray-600 mb-6 leading-relaxed">
-                Fondée en 2009 par Koffi Diabaté, TP N'SIKAN PROJET ESPOIR est née d'une vision ambitieuse : 
-                contribuer au développement de la Côte d'Ivoire à travers des projets de construction d'excellence.
+              <p className="text-lg text-neutral-600 mb-6 leading-relaxed">
+                Fondée en 2009, <strong className="text-primary-600">TP N'SIKAN PROJET ESPOIR</strong> 
+                est née de la vision de créer une entreprise de construction qui allie expertise technique, 
+                innovation et service client exceptionnel.
               </p>
-              <p className="text-gray-600 mb-8 leading-relaxed">
-                Notre entreprise s'est bâtie sur des valeurs solides : l'excellence, la qualité, 
-                l'innovation et le respect des délais. Nous accompagnons nos clients dans la 
-                réalisation de leurs projets les plus ambitieux, qu'il s'agisse de constructions 
-                résidentielles, commerciales ou d'infrastructures publiques.
+              <p className="text-lg text-neutral-600 mb-6 leading-relaxed">
+                Au fil des années, nous avons développé une expertise reconnue dans la construction 
+                de maisons individuelles, la rénovation de bâtiments et l'aménagement d'espaces. 
+                Notre équipe de professionnels qualifiés partage la même passion pour l'excellence 
+                et l'innovation.
               </p>
-              <div className="grid grid-cols-2 gap-6">
-                {stats.map((stat, index) => (
-                  <div key={index} className="text-center bg-white p-6 rounded-xl shadow-lg">
-                    <div className="text-3xl font-bold text-red-800 mb-2">{stat.number}</div>
-                    <div className="text-gray-600">{stat.label}</div>
-                  </div>
-                ))}
+              <div className="space-y-4">
+                <div className="flex items-center space-x-3">
+                  <CheckCircle className="h-5 w-5 text-primary-600" />
+                  <span className="text-neutral-700">Plus de 15 ans d'expérience</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <CheckCircle className="h-5 w-5 text-primary-600" />
+                  <span className="text-neutral-700">150+ projets réalisés avec succès</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <CheckCircle className="h-5 w-5 text-primary-600" />
+                  <span className="text-neutral-700">Équipe de 25+ professionnels</span>
+                </div>
               </div>
             </div>
-            
-            <div className="relative">
+            <div>
               <img 
-                src="https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=800" 
-                alt="Équipe TP N'SIKAN"
-                className="rounded-xl shadow-2xl"
+                src="https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+                alt="Histoire TP N'SIKAN"
+                className="rounded-lg shadow-xl w-full h-96 object-cover"
               />
-              <div className="absolute -bottom-6 -left-6 bg-red-800 text-white p-6 rounded-xl">
-                <div className="text-2xl font-bold">Koffi Diabaté</div>
-                <div className="text-red-200">Directeur Général</div>
-              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Mission & Vision */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12">
-            <div className="bg-gray-50 p-8 rounded-xl shadow-lg">
-              <div className="bg-red-800 w-16 h-16 rounded-lg flex items-center justify-center mb-6">
-                <Target className="text-white" size={32} />
+      {/* Nos Valeurs */}
+      <section className="py-20 bg-neutral-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-heading font-bold text-neutral-900 mb-4">
+              Nos Valeurs
+            </h2>
+            <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
+              Les valeurs qui guident notre travail et nos relations avec nos clients
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {values.map((value, index) => (
+              <div 
+                key={index}
+                className="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+              >
+                <div className="bg-primary-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <value.icon className="h-8 w-8 text-primary-600" />
+                </div>
+                <h3 className="text-xl font-semibold text-neutral-900 mb-4">
+                  {value.title}
+                </h3>
+                <p className="text-neutral-600">
+                  {value.description}
+                </p>
               </div>
-              <h3 className="text-2xl font-bold text-gray-800 mb-4">Notre Mission</h3>
-              <p className="text-gray-600 leading-relaxed mb-6">
-                Fournir des services de construction et de travaux publics de haute qualité, 
-                en respectant les délais et les budgets, tout en contribuant au développement 
-                durable de la Côte d'Ivoire.
-              </p>
-              <ul className="space-y-2">
-                <li className="flex items-center text-gray-700">
-                  <CheckCircle className="text-green-500 mr-3" size={16} />
-                  Excellence dans l'exécution
-                </li>
-                <li className="flex items-center text-gray-700">
-                  <CheckCircle className="text-green-500 mr-3" size={16} />
-                  Respect des délais
-                </li>
-                <li className="flex items-center text-gray-700">
-                  <CheckCircle className="text-green-500 mr-3" size={16} />
-                  Développement durable
-                </li>
-              </ul>
-            </div>
-            
-            <div className="bg-gray-50 p-8 rounded-xl shadow-lg">
-              <div className="bg-green-500 w-16 h-16 rounded-lg flex items-center justify-center mb-6">
-                <Eye className="text-white" size={32} />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-800 mb-4">Notre Vision</h3>
-              <p className="text-gray-600 leading-relaxed mb-6">
-                Devenir la référence en matière de construction et de travaux publics en Afrique 
-                de l'Ouest, reconnue pour son expertise, son innovation et son engagement 
-                envers l'excellence.
-              </p>
-              <ul className="space-y-2">
-                <li className="flex items-center text-gray-700">
-                  <CheckCircle className="text-green-500 mr-3" size={16} />
-                  Leadership régional
-                </li>
-                <li className="flex items-center text-gray-700">
-                  <CheckCircle className="text-green-500 mr-3" size={16} />
-                  Innovation continue
-                </li>
-                <li className="flex items-center text-gray-700">
-                  <CheckCircle className="text-green-500 mr-3" size={16} />
-                  Excellence reconnue
-                </li>
-              </ul>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Timeline */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-6">
-              Notre <span className="text-red-800">Parcours</span>
+            <h2 className="text-4xl font-heading font-bold text-neutral-900 mb-4">
+              Notre Parcours
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Découvrez les étapes clés qui ont marqué l'évolution de TP N'SIKAN PROJET ESPOIR
+            <p className="text-xl text-neutral-600">
+              Les étapes clés de notre développement
             </p>
           </div>
 
           <div className="relative">
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-red-800"></div>
+            {/* Ligne verticale */}
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-primary-200"></div>
+
             <div className="space-y-12">
               {timeline.map((item, index) => (
-                <div key={index} className={`flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
-                  <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8'}`}>
-                    <div className="bg-white p-6 rounded-xl shadow-lg">
-                      <div className="text-red-800 font-bold text-lg mb-2">{item.year}</div>
-                      <h3 className="text-xl font-bold text-gray-800 mb-3">{item.title}</h3>
-                      <p className="text-gray-600 leading-relaxed">{item.description}</p>
+                <div 
+                  key={index}
+                  className={`flex items-center ${
+                    index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
+                  }`}
+                >
+                  <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
+                    <div className="bg-white rounded-lg shadow-lg p-6">
+                      <div className="flex items-center space-x-2 mb-3">
+                        <Calendar className="h-5 w-5 text-primary-600" />
+                        <span className="text-primary-600 font-bold text-lg">{item.year}</span>
+                      </div>
+                      <h3 className="text-xl font-semibold text-neutral-900 mb-2">
+                        {item.title}
+                      </h3>
+                      <p className="text-neutral-600">
+                        {item.description}
+                      </p>
                     </div>
                   </div>
-                  <div className="relative z-10">
-                    <div className="w-4 h-4 bg-red-800 rounded-full border-4 border-white shadow-lg"></div>
-                  </div>
+                  
+                  {/* Point central */}
+                  <div className="relative z-10 w-4 h-4 bg-primary-600 rounded-full border-4 border-white shadow-lg"></div>
+                  
                   <div className="w-1/2"></div>
                 </div>
               ))}
@@ -217,75 +196,91 @@ const About = () => {
         </div>
       </section>
 
-      {/* Values */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
+      {/* Notre Équipe */}
+      <section className="py-20 bg-neutral-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-6">
-              Nos <span className="text-red-800">Valeurs</span>
+            <h2 className="text-4xl font-heading font-bold text-neutral-900 mb-4">
+              Notre Équipe
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Les principes fondamentaux qui guident notre action quotidienne et notre engagement envers nos clients
+            <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
+              Une équipe de professionnels passionnés et expérimentés à votre service
             </p>
           </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((value, index) => (
-              <div key={index} className="text-center bg-gray-50 p-8 rounded-xl hover:shadow-lg transition-all">
-                <div className="bg-red-800 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <value.icon className="text-white" size={28} />
-                </div>
-                <h4 className="text-xl font-bold text-gray-800 mb-4">{value.title}</h4>
-                <p className="text-gray-600 leading-relaxed">{value.description}</p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+              <img 
+                src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop"
+                alt="Directeur"
+                className="w-full h-64 object-cover"
+              />
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-neutral-900 mb-2">
+                  N'Sikan Kouakou
+                </h3>
+                <p className="text-primary-600 font-medium mb-3">
+                  Directeur Général
+                </p>
+                <p className="text-neutral-600 text-sm">
+                  Ingénieur en génie civil avec plus de 20 ans d'expérience dans la construction.
+                </p>
               </div>
-            ))}
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+              <img 
+                src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop"
+                alt="Chef de projet"
+                className="w-full h-64 object-cover"
+              />
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-neutral-900 mb-2">
+                  Marie Diabaté
+                </h3>
+                <p className="text-primary-600 font-medium mb-3">
+                  Chef de Projet
+                </p>
+                <p className="text-neutral-600 text-sm">
+                  Architecte spécialisée dans la conception de maisons modernes et durables.
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+              <img 
+                src="https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop"
+                alt="Responsable technique"
+                className="w-full h-64 object-cover"
+              />
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-neutral-900 mb-2">
+                  Yao Koffi
+                </h3>
+                <p className="text-primary-600 font-medium mb-3">
+                  Responsable Technique
+                </p>
+                <p className="text-neutral-600 text-sm">
+                  Expert en rénovation et aménagement avec une expertise en nouvelles technologies.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="py-20 bg-red-800 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-6">Notre Équipe</h2>
-          <p className="text-xl mb-12 max-w-3xl mx-auto">
-            Une équipe de professionnels expérimentés et passionnés, unis par la même vision de l'excellence
+      {/* CTA */}
+      <section className="py-20 bg-primary-600">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl font-heading font-bold text-white mb-6">
+            Travaillons Ensemble
+          </h2>
+          <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
+            Découvrez comment notre expertise et notre passion peuvent donner vie à vos projets.
           </p>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white bg-opacity-10 backdrop-blur-sm p-8 rounded-xl">
-              <Building className="mx-auto mb-4 text-green-400" size={48} />
-              <h3 className="text-2xl font-bold mb-2">Architectes</h3>
-              <p className="text-red-200">Conception et design innovants</p>
-            </div>
-            <div className="bg-white bg-opacity-10 backdrop-blur-sm p-8 rounded-xl">
-              <Users className="mx-auto mb-4 text-green-400" size={48} />
-              <h3 className="text-2xl font-bold mb-2">Ingénieurs</h3>
-              <p className="text-red-200">Expertise technique de pointe</p>
-            </div>
-            <div className="bg-white bg-opacity-10 backdrop-blur-sm p-8 rounded-xl">
-              <Award className="mx-auto mb-4 text-green-400" size={48} />
-              <h3 className="text-2xl font-bold mb-2">Artisans</h3>
-              <p className="text-red-200">Savoir-faire traditionnel et moderne</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Call to Action */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold text-gray-800 mb-6">Rejoignez Notre Histoire</h2>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            Faites confiance à notre expertise et notre passion pour donner vie à vos projets les plus ambitieux
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-red-800 hover:bg-red-900 text-white px-8 py-4 rounded-lg font-semibold transition-all transform hover:scale-105">
-              Découvrir Nos Services
-            </button>
-            <button className="border-2 border-red-800 text-red-800 hover:bg-red-800 hover:text-white px-8 py-4 rounded-lg font-semibold transition-all">
-              Nous Contacter
-            </button>
-          </div>
+          <button className="bg-white text-primary-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-neutral-100 transition-colors duration-300">
+            Contactez-nous
+          </button>
         </div>
       </section>
     </div>

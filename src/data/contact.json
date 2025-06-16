@@ -1,8 +1,13 @@
 {
-  "address": "Abidjan, Cocody Riviera Golf\nRue des Jardins, Lot 247\nCôte d'Ivoire",
-  "phone_primary": "+225 07 07 07 07 07",
-  "phone_secondary": "+225 05 05 05 05 05",
-  "email_primary": "contact@tpnsikan.com",
-  "email_secondary": "info@tpnsikan.com",
-  "hours": "Lundi - Vendredi: 8h00 - 18h00\nSamedi: 8h00 - 12h00"
+  "company_name": "TP N'SIKAN PROJET ESPOIR",
+  "phone_main": "+225 XX XX XX XX XX",
+  "phone_secondary": "+225 YY YY YY YY YY",
+  "email_main": "contact@tpnsikan.com",
+  "email_quote": "devis@tpnsikan.com",
+  "address": "Abidjan, Côte d'Ivoire",
+  "city": "Abidjan",
+  "country": "Côte d'Ivoire",
+  "facebook_url": "https://www.facebook.com/tpnsikanprojetespoir",
+  "instagram_url": "#",
+  "linkedin_url": "#"
 }

@@ -2,55 +2,34 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import AdminPanel from './components/AdminPanel';
 import Home from './pages/Home';
+import About from './pages/About';
 import Services from './pages/Services';
 import Projects from './pages/Projects';
-import About from './pages/About';
 import Contact from './pages/Contact';
-import Admin from './pages/Admin';
 
 function App() {
   return (
     <Router>
-      <div className="min-h-screen">
+      <div className="min-h-screen bg-white">
         <Routes>
-          {/* Route d'administration sans header/footer */}
-          <Route path="/admin" element={<Admin />} />
-          <Route path="/admin/*" element={<Admin />} />
+          {/* Route d'administration - Accessible via /admin-panel */}
+          <Route path="/admin-panel" element={<AdminPanel />} />
           
-          {/* Routes publiques avec header/footer */}
-          <Route path="/" element={
+          {/* Routes publiques */}
+          <Route path="/*" element={
             <>
               <Header />
-              <Home />
-              <Footer />
-            </>
-          } />
-          <Route path="/services" element={
-            <>
-              <Header />
-              <Services />
-              <Footer />
-            </>
-          } />
-          <Route path="/projets" element={
-            <>
-              <Header />
-              <Projects />
-              <Footer />
-            </>
-          } />
-          <Route path="/apropos" element={
-            <>
-              <Header />
-              <About />
-              <Footer />
-            </>
-          } />
-          <Route path="/contact" element={
-            <>
-              <Header />
-              <Contact />
+              <main>
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/a-propos" element={<About />} />
+                  <Route path="/services" element={<Services />} />
+                  <Route path="/projets" element={<Projects />} />
+                  <Route path="/contact" element={<Contact />} />
+                </Routes>
+              </main>
               <Footer />
             </>
           } />
