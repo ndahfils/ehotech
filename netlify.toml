@@ -2,3 +2,8 @@
   base = ""  # Pas de dossier spécial, on utilise la racine
   publish = "dist"  # Les fichiers prêts à déployer sont dans "dist"
   command = "npm run build"  # Commande pour construire le site
+
+[[redirects]]
+  from = "/admin/*"
+  to = "/admin/index.html"
+  status = 200
